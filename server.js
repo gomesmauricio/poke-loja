@@ -6,7 +6,7 @@ const app = express()
 const { resolve } = require('path')
 const { json } = require('express')
 
-app.use('*', 
+app.use('/', 
 express.static(
     
     resolve(
@@ -14,6 +14,8 @@ express.static(
         './build'
     )
 ))
+
+app.use('*', express.static( resolve( __dirname, './build' ) ) ) 
 
 app.listen(process.env.PORT || 8000, (err) => {
     if (err) { return console.log(err) }
