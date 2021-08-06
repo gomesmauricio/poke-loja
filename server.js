@@ -6,7 +6,7 @@ const app = express()
 const { resolve } = require('path')
 const { json } = require('express')
 
-app.use('/', 
+app.use('/','/cart','profile', 
 express.static(
     
     resolve(
